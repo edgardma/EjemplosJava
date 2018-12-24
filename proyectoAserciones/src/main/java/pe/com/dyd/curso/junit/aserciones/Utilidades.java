@@ -18,4 +18,8 @@ public class Utilidades {
 		
 		return array;
 	}
+	
+	public boolean esMayorQue10(int num) {
+		return num > 10;
+	}
 }

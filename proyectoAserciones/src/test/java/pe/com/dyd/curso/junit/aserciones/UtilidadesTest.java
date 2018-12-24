@@ -2,7 +2,9 @@ package pe.com.dyd.curso.junit.aserciones;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,6 +38,15 @@ public class UtilidadesTest {
 		
 		assertNotEquals(esperado[0], resultado[1]);
 		assertNotEquals(esperado[0], resultado[2]);
+	}
+	
+	@Test
+	public void testAssertTrue() {
+		boolean resultadoTrue = utils.esMayorQue10(20);
+		boolean resultadoFalse = utils.esMayorQue10(5);
+		
+		assertTrue("La aserción a fallado para true", resultadoTrue);
+		assertFalse("La aserción a fallado para false", resultadoFalse);
 	}
 
 }
