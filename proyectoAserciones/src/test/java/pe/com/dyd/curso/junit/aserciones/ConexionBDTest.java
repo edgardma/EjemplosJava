@@ -1,6 +1,9 @@
 package pe.com.dyd.curso.junit.aserciones;
 
+import static org.junit.Assert.assertThat;
+
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
@@ -8,27 +11,44 @@ import org.junit.Test;
 
 public class ConexionBDTest {
 	
-	private ConexionBD conexion;
+	private static final String BD = "dbgenerica";
+	private static final String USER = "root";
+	private static final String PASS = "";
+	private static final String INVALID_USER = "noValido";
+	
+	private ConexionBD conexionBD;
 	
 	@Test
-	public void testFail() {
-		//Assert.fail("Prueba de fail");
-	}
-
-	@Test
-	public void testFailConnectionBd() {
-		conexion = new ConexionBD();
+	public void conexionCorrecta() {
+		conexionBD = new ConexionBD(BD, USER, PASS);
+		Connection con = null;
 		
-		Connection con = conexion.getConnection();
-		
-		if (con == null) {
-			Assert.fail("Ha fallado la conexion con la BD");
+		try {
+			con = conexionBD.getConnection();
+		} catch (SQLException e) {
+			//e.printStackTrace();
+			Assert.fail("La conexión a fallado");
 		}
 		
 		Assert.assertThat(con, Matchers.notNullValue());
-		Assert.assertThat(conexion.db, Matchers.equalTo("prueba"));
-		Assert.assertThat(conexion.user, Matchers.equalTo("prueba"));
-		Assert.assertThat(conexion.url, Matchers.equalTo("prueba"));
-		Assert.assertThat(conexion.pass, Matchers.equalTo("prueba"));
+	}
+	
+	@Test
+	public void conexionFallida() {
+		conexionBD = new ConexionBD(BD, INVALID_USER, PASS);
+		Connection con = null;
+		
+		try {
+			con = conexionBD.getConnection();
+			Assert.fail("La conexión a fallado");
+		} catch (SQLException e) {
+			Assert.assertThat(e, Matchers.isA(SQLException.class));
+			Assert.assertThat(e.getMessage(), Matchers.startsWith("Access denied"));
+			Assert.assertThat(e.getMessage(), Matchers.containsString("Access denied"));
+			Assert.assertThat(e.getSQLState(), Matchers.is("42000"));
+			//e.printStackTrace();
+		}
+		
+		Assert.assertThat(con, Matchers.nullValue());
 	}
 }

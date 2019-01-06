@@ -6,20 +6,33 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 	
-	public final String db = "dbGenerica";
-	public final String url = "jdbc:mysql://localhost/" + db + "?";
-	public final String user = "admin";
-	public final String pass = "1234";
+	private final String db;
+	private final String url;
+	private final String user;
+	private final String pass;
 	
-	public Connection getConnection() {
-		Connection conn = null;
-		
-		try {
-			conn = DriverManager.getConnection(this.url, this.user, this.pass);
-		} catch(SQLException ex) {
-			ex.printStackTrace();
-		}
-		
-		return conn;
+	public ConexionBD(String db, String user, String pass) {
+		super();
+		this.db = db;
+		this.url = "jdbc:mysql://localhost/" + db + "?";
+		this.user = user;
+		this.pass = pass;
 	}
+
+	public Connection getConnection() throws SQLException {
+		return DriverManager.getConnection(this.url + "user=" + this.user + "&password=" + this.pass);
+	}
+	
+	public String getDb() {
+		return db;
+	}
+	
+	public String getUser() {
+		return user;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
 }
