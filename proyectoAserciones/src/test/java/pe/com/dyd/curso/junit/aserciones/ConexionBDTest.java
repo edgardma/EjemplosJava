@@ -1,7 +1,5 @@
 package pe.com.dyd.curso.junit.aserciones;
 
-import static org.junit.Assert.assertThat;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -50,5 +48,13 @@ public class ConexionBDTest {
 		}
 		
 		Assert.assertThat(con, Matchers.nullValue());
+	}
+	
+	@Test(expected = SQLException.class)
+	public void conexionFallidaAnotaciones() throws SQLException {
+		conexionBD = new ConexionBD(BD, INVALID_USER, PASS);
+		conexionBD.getConnection();
+		
+		Assert.fail("La conexión a fallado");
 	}
 }
