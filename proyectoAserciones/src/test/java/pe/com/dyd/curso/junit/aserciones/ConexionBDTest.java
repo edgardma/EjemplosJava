@@ -54,7 +54,6 @@ public class ConexionBDTest {
 	public void conexionFallidaAnotaciones() throws SQLException {
 		conexionBD = new ConexionBD(BD, INVALID_USER, PASS);
 		conexionBD.getConnection();
-		
 		Assert.fail("La conexión a fallado");
 	}
 }
