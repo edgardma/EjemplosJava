@@ -5,7 +5,9 @@ import java.sql.SQLException;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class ConexionBDTest {
 	
@@ -13,6 +15,9 @@ public class ConexionBDTest {
 	private static final String USER = "root";
 	private static final String PASS = "";
 	private static final String INVALID_USER = "noValido";
+	
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
 	
 	private ConexionBD conexionBD;
 	
@@ -54,6 +59,20 @@ public class ConexionBDTest {
 	public void conexionFallidaAnotaciones() throws SQLException {
 		conexionBD = new ConexionBD(BD, INVALID_USER, PASS);
 		conexionBD.getConnection();
-		Assert.fail("La conexión a fallado");
+		//Assert.fail("La conexión a fallado");
+	}
+	
+	@Test
+	public void conexionFallidaRegla() throws SQLException {
+		exception.expect(SQLException.class);
+		exception.expectMessage("Access denied for user");
+		exception.expectMessage("denied for user");
+		exception.expectMessage("Access denied");
+		//exception.expectMessage(Matchers.equalTo(""));
+		exception.expectMessage(Matchers.containsString("denied for user"));
+		
+		conexionBD = new ConexionBD(BD, INVALID_USER, PASS);
+		conexionBD.getConnection();
+		//Assert.fail("La conexión a fallado");
 	}
 }
