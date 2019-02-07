@@ -13,5 +13,9 @@ public class Pregunta09 {
 		f = d;
 		d = i;
 		*/
+		i = (int)f;
+		f = i;
+		d = f;
+		d = i;
 	}
 }
