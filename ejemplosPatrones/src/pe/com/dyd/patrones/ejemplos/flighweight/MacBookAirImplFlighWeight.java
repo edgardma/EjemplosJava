@@ -14,7 +14,7 @@ public class MacBookAirImplFlighWeight implements MacBookAir {
 	@Override
 	public String getId() {
 		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 	@Override
