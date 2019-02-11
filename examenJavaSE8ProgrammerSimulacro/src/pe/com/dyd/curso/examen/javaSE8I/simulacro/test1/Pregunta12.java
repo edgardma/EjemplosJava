@@ -14,6 +14,6 @@ public class Pregunta12 {
 	}
 	public static void main(String[] args) {
 		Pregunta12 t = new Pregunta12();
-		t.doStuff("9999");
+		t.doStuff("9999"); // Resultado: myStr: 7777 , myNum: 9999
 	}
 }
