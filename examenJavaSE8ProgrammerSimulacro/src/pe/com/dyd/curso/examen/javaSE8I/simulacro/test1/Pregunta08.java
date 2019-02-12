@@ -13,3 +13,8 @@ public class Pregunta08 {
 		}
 	}
 }
+
+/*Resultado:
+ * Exception in thread "main" java.lang.NullPointerException
+	at pe.com.dyd.curso.examen.javaSE8I.simulacro.test1.Pregunta08.main(Pregunta08.java:8)
+ * */

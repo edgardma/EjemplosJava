@@ -5,17 +5,19 @@ public class Pregunta09 {
 		int i = 100;
 		float f = 100.100f;
 		double d = 123;
-		/*
-		i = d;
+		
+		//i = d; // No compila
 		d = f;
 		f = i;
-		i = f;
-		f = d;
+		//i = f; // No compila
+		//f = d; // No compila
 		d = i;
-		*/
+		
+		/*
 		i = (int)f;
 		f = i;
 		d = f;
 		d = i;
+		*/
 	}
 }
