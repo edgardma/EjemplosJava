@@ -5,10 +5,12 @@ class Product {
 }
 
 public class Pregunta03 {
+	
 	public void updatePrice(Product p, double price) {
 		price = price * 2;
 		p.price = p.price + price;
 	}
+	
 	public static void main(String[] args) {
 		Product prt = new Product();
 		prt.price = 200;
@@ -16,6 +18,6 @@ public class Pregunta03 {
 		
 		Pregunta03 t = new Pregunta03();
 		t.updatePrice(prt, newPrice);
-		System.out.println(prt.price + "...." + newPrice);
+		System.out.println(prt.price + "...." + newPrice); // Resultado: 400.0....100.0
 	}
 }

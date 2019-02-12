@@ -16,6 +16,6 @@ public class Pregunta02 {
 		d1.y = 20;
 		Pregunta02 t = new Pregunta02();
 		t.m1(d1);
-		System.out.println(d1.x + "..." + d1.y);
+		System.out.println(d1.x + "..." + d1.y); // Resultado: 888...999
 	}
 }
