@@ -20,5 +20,10 @@ public class Pregunta15 {
 		System.out.println(students);
 		System.out.println(students[2]);
 		System.out.println(students[2].rollno);
+		/*
+		 * [Lpe.com.dyd.curso.examen.javaSE8I.simulacro.test1.Student;@15db9742
+		 * pe.com.dyd.curso.examen.javaSE8I.simulacro.test1.Student@6d06d69c
+		 * 103
+		 */
 	}
 }
