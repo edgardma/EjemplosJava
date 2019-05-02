@@ -1,0 +1,6 @@
+#Imagenes
+*.jpg
+#Compilador
+*.class
+*.jar
+*.war
