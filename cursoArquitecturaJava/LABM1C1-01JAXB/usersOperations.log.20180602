@@ -1,0 +1,10 @@
+12:43:08,406 [main      ] INFO  (jaxb.JAXBUnMarshall:30) Datos del profesor
+12:43:08,412 [main      ] INFO  (jaxb.JAXBUnMarshall:31) Codigo: 123456
+12:43:08,413 [main      ] INFO  (jaxb.JAXBUnMarshall:32) Nombres: Juan
+12:43:08,413 [main      ] INFO  (jaxb.JAXBUnMarshall:33) Apellidos: Perez
+12:43:08,419 [main      ] INFO  (jaxb.JAXBUnMarshall:34) Fecha de ingreso: Sun Nov 21 00:00:00 COT 2010
+12:44:39,586 [main      ] INFO  (jaxb.JAXBUnMarshall:30) Datos del profesor
+12:44:39,589 [main      ] INFO  (jaxb.JAXBUnMarshall:31) Codigo: 123456
+12:44:39,589 [main      ] INFO  (jaxb.JAXBUnMarshall:32) Nombres: Juan
+12:44:39,590 [main      ] INFO  (jaxb.JAXBUnMarshall:33) Apellidos: Perez
+12:44:39,593 [main      ] INFO  (jaxb.JAXBUnMarshall:34) Fecha de ingreso: Sun Nov 21 00:00:00 COT 2010

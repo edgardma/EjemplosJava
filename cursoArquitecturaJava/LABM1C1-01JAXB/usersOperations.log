@@ -1,0 +1,13 @@
+21:49:24,011 [main      ] INFO  (jaxb.JAXBMarshall:45) 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:profesor xmlns:ns2="http://www.cibertec.edu/jaad/profesor" codigo="123456">
+    <nombre>Juan</nombre>
+    <apellido>Perez</apellido>
+    <fechaIngreso>2010-11-21T00:00:00-05:00</fechaIngreso>
+</ns2:profesor>
+
+21:49:31,964 [main      ] INFO  (jaxb.JAXBUnMarshall:30) Datos del profesor
+21:49:31,967 [main      ] INFO  (jaxb.JAXBUnMarshall:31) Codigo: 123456
+21:49:31,967 [main      ] INFO  (jaxb.JAXBUnMarshall:32) Nombres: Juan
+21:49:31,967 [main      ] INFO  (jaxb.JAXBUnMarshall:33) Apellidos: Perez
+21:49:31,971 [main      ] INFO  (jaxb.JAXBUnMarshall:34) Fecha de ingreso: Sun Nov 21 00:00:00 COT 2010
