@@ -1,0 +1,192 @@
+21:35:11,660 [main      ] INFO  (json.JSONMarshall:26) Starting...
+21:35:11,833 [main      ] INFO  (json.JSONMarshall:43) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000
+}
+21:36:38,828 [main      ] INFO  (json.JASONMarshall:26) Starting...
+21:36:38,995 [main      ] INFO  (json.JASONMarshall:43) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000
+}
+21:36:50,432 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+21:36:50,433 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+21:36:50,433 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+21:36:50,434 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+21:36:50,436 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+21:36:50,436 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+21:48:30,796 [main      ] INFO  (json.JASONMarshall:26) Starting...
+21:48:30,965 [main      ] INFO  (json.JASONMarshall:49) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "cursos" : null
+}
+21:49:00,217 [main      ] INFO  (json.JASONMarshall:26) Starting...
+21:49:00,388 [main      ] INFO  (json.JASONMarshall:50) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "cursos" : [ {
+    "codigo" : 1,
+    "nombre" : "Curso 1"
+  } ]
+}
+21:49:08,647 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+21:49:08,648 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+21:49:08,648 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+21:49:08,649 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+21:49:08,651 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+21:49:08,651 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+21:49:39,526 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+21:49:39,527 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+21:49:39,528 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+21:49:39,528 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+21:49:39,530 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+21:49:39,530 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+21:49:39,530 [main      ] INFO  (json.JASONUnMarshall:35) Cursos: [edu.cibertec.jaad.json.Curso@51565ec2]
+21:50:25,070 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+21:50:25,072 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+21:50:25,072 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+21:50:25,072 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+21:50:25,074 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+21:50:25,074 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+21:50:25,074 [main      ] INFO  (json.JASONUnMarshall:37) Curso - Codigo: 1
+21:50:25,075 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Nombre: Curso 1
+21:51:01,595 [main      ] INFO  (json.JASONMarshall:26) Starting...
+21:51:01,761 [main      ] INFO  (json.JASONMarshall:54) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "cursos" : [ {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  }, {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  } ]
+}
+21:51:07,755 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+21:51:07,757 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+21:51:07,757 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+21:51:07,757 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+21:51:07,759 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+21:51:07,759 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+21:51:07,759 [main      ] INFO  (json.JASONUnMarshall:37) Curso - Codigo: 2
+21:51:07,760 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Nombre: Curso 2
+21:51:07,760 [main      ] INFO  (json.JASONUnMarshall:37) Curso - Codigo: 2
+21:51:07,760 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Nombre: Curso 2
+21:52:11,018 [main      ] INFO  (json.JASONMarshall:26) Starting...
+21:52:11,183 [main      ] INFO  (json.JASONMarshall:57) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "cursos" : [ {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  }, {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  } ]
+}
+21:53:35,621 [main      ] INFO  (json.JASONMarshall:26) Starting...
+21:53:35,793 [main      ] INFO  (json.JASONMarshall:56) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "cursos" : [ {
+    "codigo" : 1,
+    "nombre" : "Curso 1"
+  }, {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  } ]
+}
+21:53:41,666 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+21:53:41,668 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+21:53:41,668 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+21:53:41,668 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+21:53:41,670 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+21:53:41,671 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+21:53:41,671 [main      ] INFO  (json.JASONUnMarshall:37) Curso - Codigo: 1
+21:53:41,671 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Nombre: Curso 1
+21:53:41,671 [main      ] INFO  (json.JASONUnMarshall:37) Curso - Codigo: 2
+21:53:41,671 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Nombre: Curso 2
+22:08:26,018 [main      ] INFO  (json.JASONMarshall:26) Starting...
+22:08:26,195 [main      ] INFO  (json.JASONMarshall:57) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "cursos" : [ {
+    "codigo" : 1,
+    "nombre" : "Curso 1"
+  }, {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  } ],
+  "codigoLocal" : "123456"
+}
+22:08:32,128 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+22:08:32,131 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+22:08:32,131 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+22:08:32,131 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+22:08:32,133 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+22:08:32,134 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+22:08:32,134 [main      ] INFO  (json.JASONUnMarshall:35) Codigo local: 123456
+22:08:32,134 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Codigo: 1
+22:08:32,134 [main      ] INFO  (json.JASONUnMarshall:39) Curso - Nombre: Curso 1
+22:08:32,135 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Codigo: 2
+22:08:32,135 [main      ] INFO  (json.JASONUnMarshall:39) Curso - Nombre: Curso 2
+22:10:04,123 [main      ] INFO  (json.JASONMarshall:26) Starting...
+22:10:04,289 [main      ] INFO  (json.JASONMarshall:57) Resultado:
+{
+  "codigo" : 123,
+  "nombre" : "Java Architect Application Developer",
+  "modulos" : [ "Fundamentos de Comunicacion de Sistemas Distribuidos", "Arquitectura de Web Services y Estandares Relacionados" ],
+  "fechaInicio" : 1459486800000,
+  "fechaFin" : 1468990800000,
+  "codigoLocal" : "123456",
+  "cursos" : [ {
+    "codigo" : 1,
+    "nombre" : "Curso 1"
+  }, {
+    "codigo" : 2,
+    "nombre" : "Curso 2"
+  } ]
+}
+22:10:11,874 [main      ] INFO  (json.JASONUnMarshall:29) Datos del programa
+22:10:11,875 [main      ] INFO  (json.JASONUnMarshall:30) Codigo: 123
+22:10:11,875 [main      ] INFO  (json.JASONUnMarshall:31) Nombre: Java Architect Application Developer
+22:10:11,876 [main      ] INFO  (json.JASONUnMarshall:32) Modulos: [Fundamentos de Comunicacion de Sistemas Distribuidos, Arquitectura de Web Services y Estandares Relacionados]
+22:10:11,878 [main      ] INFO  (json.JASONUnMarshall:33) FechaInicio: Fri Apr 01 00:00:00 COT 2016
+22:10:11,878 [main      ] INFO  (json.JASONUnMarshall:34) FechaFin: Wed Jul 20 00:00:00 COT 2016
+22:10:11,878 [main      ] INFO  (json.JASONUnMarshall:35) Codigo local: 123456
+22:10:11,878 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Codigo: 1
+22:10:11,879 [main      ] INFO  (json.JASONUnMarshall:39) Curso - Nombre: Curso 1
+22:10:11,879 [main      ] INFO  (json.JASONUnMarshall:38) Curso - Codigo: 2
+22:10:11,879 [main      ] INFO  (json.JASONUnMarshall:39) Curso - Nombre: Curso 2
