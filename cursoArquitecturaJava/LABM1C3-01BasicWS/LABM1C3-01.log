@@ -1,0 +1,3 @@
+20:13:15,236 [main      ] INFO  (jaxws.TimeServiceClient) Time: Mon Jun 04 20:13:15 COT 2018 - [linea:30]
+20:24:17,318 [main      ] INFO  (jaxws.TimeServiceClient) Time: Mon Jun 04 20:24:17 COT 2018 - [linea:31]
+20:24:17,318 [main      ] INFO  (jaxws.TimeServiceClient) Time: 1528161857240 - [linea:32]
