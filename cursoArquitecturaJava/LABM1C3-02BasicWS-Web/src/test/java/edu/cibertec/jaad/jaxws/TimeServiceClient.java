@@ -18,9 +18,11 @@ public class TimeServiceClient {
 	public static void main(String[] args) throws MalformedURLException {
 		URL url;
 		
-		url = new File("timeService.wsdl").toURI().toURL();
-		url = TimeServiceClient.class.getClassLoader().getResource("timeService.wsdl");
-		//url = new URL("http://localhost:8081/timeService?wsdl");
+		//url = new File("timeService.wsdl").toURI().toURL();
+		//url = TimeServiceClient.class.getClassLoader().getResource("timeService.wsdl");
+		//url = new URL("http://localhost:8081/LABM1C3-02BasicWS-Web-1.00-SNAPSHOT/BasicTimeService?wsdl");
+                //url = new URL("http://localhost:8080/timeService?wsdl");
+                url = new File("timeService.wsdl").toURI().toURL();
 		QName qname = new QName(
 				"http://jaxws.jaad.cibertec.edu/", 
 				"BasicTimeServiceService");
@@ -34,6 +36,6 @@ public class TimeServiceClient {
 	private static void setupIpService(BindingProvider provider){
 		Map<String, Object> map =provider.getRequestContext();
 		map.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, 
-				"http://localhost:8081/timeService");
+				"http://localhost:8080/timeService");
 	}
 }
