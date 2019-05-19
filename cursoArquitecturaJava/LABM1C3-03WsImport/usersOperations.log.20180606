@@ -1,0 +1,3 @@
+22:24:45,918 [main      ] INFO  (ws.CalculadoraPublisher:22) Servicio publicado...
+22:25:22,406 [main      ] INFO  (ws.BasicCalculadoraClient:29) Sumar = 10
+22:25:22,411 [main      ] INFO  (ws.BasicCalculadoraClient:30) Restar = 10
