@@ -1,0 +1,3 @@
+22:16:37,246 [main      ] INFO  (ws.CalculadoraPublisher) Servicio publicado... - [linea:17]
+22:16:52,883 [main      ] INFO  (ws.CalculadoraPublisher) Sumar = 15 - [linea:23]
+22:16:52,883 [main      ] INFO  (ws.CalculadoraPublisher) Restar = 5 - [linea:24]
