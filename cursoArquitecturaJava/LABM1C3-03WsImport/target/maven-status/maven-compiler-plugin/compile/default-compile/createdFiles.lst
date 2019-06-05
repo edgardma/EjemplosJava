@@ -1,0 +1,11 @@
+edu\cibertec\jaad\ws\Restar.class
+edu\cibertec\jaad\ws\Calculadora.class
+edu\cibertec\jaad\ws\ObjectFactory.class
+edu\cibertec\jaad\ws\SumarResponse.class
+edu\cibertec\jaad\ws\BasicCalculadora.class
+edu\cibertec\jaad\ws\Sumar.class
+edu\cibertec\jaad\ws\BasicCalculadoraService.class
+edu\cibertec\jaad\ws\BasicCalculadoraClient.class
+edu\cibertec\jaad\ws\package-info.class
+edu\cibertec\jaad\ws\CalculadoraPublisher.class
+edu\cibertec\jaad\ws\RestarResponse.class
