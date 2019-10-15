@@ -27,5 +27,6 @@ public class Test1 {
 		} finally {
 			System.out.print("SOME");
 		}
+		
 	}
 }
