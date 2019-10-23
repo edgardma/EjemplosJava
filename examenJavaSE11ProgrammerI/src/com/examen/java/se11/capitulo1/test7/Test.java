@@ -17,7 +17,6 @@ class Sub extends Super {
 	
 	@Override
 	List<Father> get() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
