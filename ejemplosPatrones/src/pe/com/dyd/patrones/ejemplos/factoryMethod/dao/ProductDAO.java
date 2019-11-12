@@ -1,5 +1,5 @@
 package pe.com.dyd.patrones.ejemplos.factoryMethod.dao;
 
-public class ProductDao {
+public class ProductDAO {
 
 }
