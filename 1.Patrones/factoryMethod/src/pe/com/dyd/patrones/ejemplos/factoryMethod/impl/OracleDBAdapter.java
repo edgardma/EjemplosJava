@@ -41,8 +41,15 @@ public class OracleDBAdapter implements IDBAdapter {
 
 	private String createConnectionString() {
 		Properties prop = PropertiesUtil.loadProperty(DB_PROPERTIES);
+		String host = prop.getProperty(DB_HOST_PROP);
+		String port = prop.getProperty(DB_PORT_PROP);
+		String service = prop.getProperty(DB_SERVICE_PROP);
+		String user = prop.getProperty(DB_USER_PROP);
+		String password = prop.getProperty(DB_PASSWORD_PROP);
 		
-		String connectionString = "";
+		String connectionString = "jdbc:oracle:thin:"
+				+ user + "/" + password + "@//" + host + ":" + port + "/" + service;
+		System.out.println("ConnectionString==>" + connectionString);
 		
 		return connectionString;
 	}
