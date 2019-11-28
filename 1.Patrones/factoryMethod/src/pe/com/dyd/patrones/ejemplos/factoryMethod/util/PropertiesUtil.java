@@ -11,7 +11,7 @@ public class PropertiesUtil {
 			InputStream inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream(propertiesURL);
 			properties.load(inputStream);
 			return properties;
-		}catch(Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 			return null;
 		}
