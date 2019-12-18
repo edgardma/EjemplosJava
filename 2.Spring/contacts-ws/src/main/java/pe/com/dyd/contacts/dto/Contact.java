@@ -56,4 +56,23 @@ public class Contact implements Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Contact [id=");
+		builder.append(id);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", mail=");
+		builder.append(mail);
+		builder.append("]");
+		
+		return builder.toString();
+	}
+	
 }
