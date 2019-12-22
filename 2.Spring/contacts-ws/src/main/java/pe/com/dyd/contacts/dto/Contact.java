@@ -1,12 +1,22 @@
 package pe.com.dyd.contacts.dto;
 
-public class Contact {
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Contact implements Serializable {
 	
-	Long id;
-	String firstName;
-	String lastName;
-	String phoneNumber;
-	String mail;
+	private static final long serialVersionUID = 4894729030347835498L;
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private String phoneNumber;
+	private String mail;
 	
 	public Contact(Long id, String firstName, String lastName, String phoneNumber, String mail) {
 		super();
@@ -46,4 +56,23 @@ public class Contact {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Contact [id=");
+		builder.append(id);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", mail=");
+		builder.append(mail);
+		builder.append("]");
+		
+		return builder.toString();
+	}
+	
 }

@@ -11,9 +11,8 @@
 	<groupId>pe.com.dyd</groupId>
 	<artifactId>contacts-ws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<name>contacts-ws</name>
-	<description>Servicio Web REST Simple</description>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -28,12 +27,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
-        <dependency>
-            <groupId>net.sf.dozer</groupId>
-            <artifactId>dozer</artifactId>
-            <version>5.5.1</version>
-        </dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
