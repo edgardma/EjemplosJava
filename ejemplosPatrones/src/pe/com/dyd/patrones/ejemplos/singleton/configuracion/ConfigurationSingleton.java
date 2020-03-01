@@ -2,7 +2,7 @@ package pe.com.dyd.patrones.ejemplos.singleton.configuracion;
 
 import java.util.Properties;
 
-import pe.com.dyd.patrones.ejemplos.factoryMethod.util.PropertiesUtil;
+import pe.com.dyd.patrones.ejemplos.singleton.configuracion.util.PropertiesUtil;
 
 public class ConfigurationSingleton {
 	private static ConfigurationSingleton singleton;
