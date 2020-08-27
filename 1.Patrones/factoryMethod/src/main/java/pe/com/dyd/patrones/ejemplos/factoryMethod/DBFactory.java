@@ -7,8 +7,8 @@ import pe.com.dyd.patrones.ejemplos.factoryMethod.impl.OracleDBAdapter;
 import pe.com.dyd.patrones.ejemplos.factoryMethod.util.PropertiesUtil;
 
 public class DBFactory {
-	private static final String DB_FACTORY_PROPERTY_URL = "META-INF/DBFactory.properties";
-	private static final String DEFAULT_DB_CLASS_PROP = "dafultDBClass";
+	private static final String DB_FACTORY_PROPERTY_URL = "DBFactory.properties";
+	private static final String DEFAULT_DB_CLASS_PROP = "defaultDBClass";
 	
 	public static IDBAdapter getDBAdapter(DBType dbType) {
 		switch (dbType) {

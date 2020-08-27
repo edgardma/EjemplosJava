@@ -23,7 +23,7 @@ public class ProductDAO {
 		
 		try {
 			PreparedStatement stament = connection.prepareStatement(
-					"SELECT idProductos, productName, productPrice FROM Productos");
+					"SELECT idProductos, productName, productPrice FROM productos");
 			ResultSet results = stament.executeQuery();
 			while (results.next()) {
 				productList.add(new Product(
@@ -39,7 +39,7 @@ public class ProductDAO {
 			try {
 				connection.close();
 			} catch(Exception e) {
-				
+				System.out.println(e.toString());
 			}
 		}
 	}
@@ -49,11 +49,11 @@ public class ProductDAO {
 		
 		try {
 			PreparedStatement stament = connection.prepareStatement(
-					"INSERT INTO Productos(idProductos, productName, productPrice) VALUES (?, ?, ?)");
+					"INSERT INTO productos(idProductos, productName, productPrice) VALUES (?, ?, ?)");
 			stament.setLong(1, product.getIdProduct());
 			stament.setString(2, product.getProductName());
 			stament.setDouble(3, product.getPrice());
-			
+			stament.executeUpdate();
 			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -62,7 +62,7 @@ public class ProductDAO {
 			try {
 				connection.close();
 			} catch(Exception e) {
-				
+				System.out.println(e.toString());
 			}
 		}
 	}
