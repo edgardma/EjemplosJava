@@ -12,7 +12,6 @@ import pe.com.dyd.patrones.ejemplos.factoryMethod.util.PropertiesUtil;
 public class OracleDBAdapter implements IDBAdapter {
 	
 	private static final String DB_PROPERTIES = "DBOracle.properties";
-	
 	private static final String DB_SERVICE_PROP = "service";
 	private static final String DB_HOST_PROP = "host";
 	private static final String DB_PASSWORD_PROP = "password";
@@ -31,7 +30,6 @@ public class OracleDBAdapter implements IDBAdapter {
 	public Connection getConnection() {
 		try {
 			String connectionString = createConnectionString();
-			//Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "sys as sysdba", "WR60x246");
 			Connection connection = createConnectionSysString();
 			System.out.println("Connection class ==> " + connection.getClass().getName());
 			return connection;

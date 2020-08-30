@@ -18,7 +18,6 @@ public class MySQLDBAdapter implements IDBAdapter {
 	
 	static {
 		try {
-			//new com.mysql.jdbc.Driver();
 			new org.mariadb.jdbc.Driver();
 		} catch(Exception e) {
 			e.printStackTrace();
