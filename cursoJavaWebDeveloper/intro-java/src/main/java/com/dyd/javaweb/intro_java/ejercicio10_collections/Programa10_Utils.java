@@ -37,12 +37,15 @@ public class Programa10_Utils {
 			System.out.println(persona);
 		}
 		
-		Collections.sort(personas, new Comparator<Persona>() {
-			@Override
-			public int compare(Persona persona1, Persona persona2) {
-				return persona1.nombre.compareTo(persona2.nombre);
-			}
-		});
+//		Collections.sort(personas, new Comparator<Persona>() {
+//			@Override
+//			public int compare(Persona persona1, Persona persona2) {
+//				return persona1.nombre.compareTo(persona2.nombre);
+//			}
+//		});
+		
+		Collections.sort(personas, new CompararNombrePersona());
+		
 		System.out.println("================");
 		System.out.println(personas);
 		System.out.println("================");
@@ -52,7 +55,7 @@ public class Programa10_Utils {
 	}
 }
 
-class Persona implements Comparator<Persona> {
+class Persona {
 	String nombre;
 	
 	Persona(String nombre) {
@@ -63,7 +66,9 @@ class Persona implements Comparator<Persona> {
 	public String toString() {
 		return "nombre: " + this.nombre;
 	}
+}
 
+class CompararNombrePersona implements Comparator<Persona> {
 	@Override
 	public int compare(Persona persona1, Persona persona2) {
 		return persona1.nombre.compareTo(persona2.nombre);
