@@ -8,6 +8,9 @@ public class Programa00 {
 		Programa00 programa = new Programa00();
 		System.out.println(programa.suma2(3, 5));
 		System.out.println(programa.suma2(3, 5));
+		System.out.println(programa.suma2(3, 5));
+		System.out.println(programa.suma2(3, 5));
+		System.out.println(programa.suma2(3, 5));
 	}
 	
 	// Este es una funcion pura, es decir, recibiendo los mismos valores de parametros
@@ -16,8 +19,11 @@ public class Programa00 {
 		return a + b;
 	}
 	
+	// Funcion Impura: Es cuando tiene un resultado diferente para los mismos parametros
 	public int suma2(int a, int b) {
-		sumatoria = sumatoria + suma(a, b);
+		sumatoria += suma(a, b);
 		return sumatoria;
 	}
+	
+	
 }
