@@ -13,7 +13,6 @@ public class WSServiceStackImpl implements IServiceStackAbstractFactory {
 
 	@Override
 	public IProductsService getProductsService() {
-		// TODO Auto-generated method stub
 		return new ProductServiceWSImpl();
 	}
 
