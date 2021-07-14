@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Class-Path: EJB01.jar
+Class-Path: EJB01Client.jar
 

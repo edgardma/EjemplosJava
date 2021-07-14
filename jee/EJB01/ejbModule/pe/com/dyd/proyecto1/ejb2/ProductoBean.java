@@ -22,7 +22,7 @@ public class ProductoBean implements ProductoRemote, ProductoLocal {
 	@Override
 	public Producto buscarUno() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Producto(1, "auricular", 200);
 	}
 
 }
