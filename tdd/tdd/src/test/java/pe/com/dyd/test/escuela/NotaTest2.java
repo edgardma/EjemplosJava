@@ -1,5 +1,6 @@
 package pe.com.dyd.test.escuela;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import pe.com.dyd.escuela.Nota;
+import pe.com.dyd.escuela.Nota.Tipo;
 
 class NotaTest2 {
 	
@@ -16,6 +18,7 @@ class NotaTest2 {
 	Nota nota3 = null;
 	Nota nota4 = null;
 	Nota nota5 = null;
+	Nota nota6 = null;
 	
 	@BeforeEach
 	public void setUp() {
@@ -26,6 +29,7 @@ class NotaTest2 {
 		nota3 = new Nota(9, "Matematicas");
 		nota4 = new Nota(7, "Matematicas");
 		nota5 = new Nota(10, "Lengua");
+		nota6 = new Nota(6, "Lengua");
 	}
 
 	@Test
@@ -75,4 +79,18 @@ class NotaTest2 {
 		assertThrows(RuntimeException.class, ()->nota1.esMayor(nota3));
 	}
 	
+	
+	@Test
+	void testNotaTipoBien() {
+		Tipo miTipoNota = nota6.getTipo();
+		
+		assertEquals(Tipo.BIEN, miTipoNota);
+	}
+	
+	@Test
+	void testNotaTipoNotable() {
+		Tipo miTipoNota = nota4.getTipo();
+		
+		assertEquals(Tipo.NOTABLE, miTipoNota);
+	}
 }

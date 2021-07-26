@@ -7,6 +7,14 @@ public class Nota {
 	private double valor;
 	private String asignatura;
 	
+	public enum Tipo {
+		MUYDEFICIENTE,
+		INSUFICIENTE,
+		BIEN,
+		NOTABLE,
+		SOBRESALIENTE
+	}
+	
 	public Nota() {
 		super();
 	}
@@ -65,6 +73,20 @@ public class Nota {
 			}
 		} else {
 			throw new RuntimeException("Las notas no son comparables por no coincidir asignaturas.");
+		}
+	}
+	
+	public Tipo getTipo() {
+		if (getValor() <= 0 && getValor() < 3) {
+			return Tipo.MUYDEFICIENTE;
+		} else if (getValor() >= 3 && getValor() < 5) {
+			return Tipo.INSUFICIENTE;
+		} else if (getValor() >= 5 && getValor() < 7) {
+			return Tipo.BIEN;
+		} else if (getValor() >= 7 && getValor() < 9) {
+			return Tipo.NOTABLE;
+		} else {
+			return Tipo.SOBRESALIENTE;
 		}
 	}
 }
