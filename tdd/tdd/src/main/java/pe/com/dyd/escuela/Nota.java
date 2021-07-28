@@ -21,8 +21,8 @@ public class Nota {
 
 	public Nota(double valor, String asignatura) {
 		super();
-		this.valor = valor;
-		this.asignatura = asignatura;
+		this.setValor(valor);
+		this.setAsignatura(asignatura);
 	}
 	
 	public double getValor() {
