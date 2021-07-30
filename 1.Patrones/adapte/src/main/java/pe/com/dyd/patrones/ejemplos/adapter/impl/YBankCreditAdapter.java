@@ -5,7 +5,7 @@ import pe.com.dyd.patrones.ejemplos.adapter.creditapi.banky.YBankCreditApproveRe
 import pe.com.dyd.patrones.ejemplos.adapter.creditapi.banky.YBankCreditSender;
 import pe.com.dyd.patrones.ejemplos.adapter.creditapi.banky.YBankCreditSenderListener;
 
-public class YBankCreditAdapte implements IBankAdapter, YBankCreditSenderListener {
+public class YBankCreditAdapter implements IBankAdapter, YBankCreditSenderListener {
 	private YBankCreditApproveResult yresponse;
 
 	@Override

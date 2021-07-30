@@ -4,7 +4,7 @@ import pe.com.dyd.patrones.ejemplos.adapter.creditapi.bankx.XBankCreditApi;
 import pe.com.dyd.patrones.ejemplos.adapter.creditapi.bankx.XBankCreditRequest;
 import pe.com.dyd.patrones.ejemplos.adapter.creditapi.bankx.XBankCreditResponse;
 
-public class XBankCreditAdapte implements IBankAdapter {
+public class XBankCreditAdapter implements IBankAdapter {
 
 	@Override
 	public BankCreditResponse sendCreditRequest(BankCreditRequest request) {

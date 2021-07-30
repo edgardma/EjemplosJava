@@ -3,8 +3,8 @@ package pe.com.dyd.patrones.ejemplos.adapter;
 import pe.com.dyd.patrones.ejemplos.adapter.impl.BankCreditRequest;
 import pe.com.dyd.patrones.ejemplos.adapter.impl.BankCreditResponse;
 import pe.com.dyd.patrones.ejemplos.adapter.impl.IBankAdapter;
-import pe.com.dyd.patrones.ejemplos.adapter.impl.XBankCreditAdapte;
-import pe.com.dyd.patrones.ejemplos.adapter.impl.YBankCreditAdapte;
+import pe.com.dyd.patrones.ejemplos.adapter.impl.XBankCreditAdapter;
+import pe.com.dyd.patrones.ejemplos.adapter.impl.YBankCreditAdapter;
 
 public class AdapterMain {
 
@@ -13,11 +13,11 @@ public class AdapterMain {
 		request.setCustomer("Edgard Marquez");
 		request.setAmount(1000);
 		
-		IBankAdapter xBank = new XBankCreditAdapte();
+		IBankAdapter xBank = new XBankCreditAdapter();
 		BankCreditResponse xresponse = xBank.sendCreditRequest(request);
 		System.out.println("XBank approved -> " + xresponse.isApproved() + "\n");
 		
-		IBankAdapter yBank = new YBankCreditAdapte();
+		IBankAdapter yBank = new YBankCreditAdapter();
 		BankCreditResponse yresponse = yBank.sendCreditRequest(request);
 		System.out.println("YBank approved -> " + yresponse.isApproved() + "\n");
 		
