@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "localhost:8080/v1/tipocambio/calcular/",
+			"name": "CalcularTipoCambio",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \"monedaOrigen\":\"dolares\",\r\n \"monedaDestino\":\"soles\",\r\n \"monto\":10\r\n}",
+					"raw": "{\r\n \"monedaOrigen\":\"soles\",\r\n \"monedaDestino\":\"dolares\",\r\n \"monto\":43.5\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -33,6 +33,57 @@
 						"v1",
 						"tipocambio",
 						"calcular",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarTipoCambio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/tipocambio/tipoCambio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"tipocambio",
+						"tipoCambio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModificarTipoCambio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"monedaOrigen\":\"soles\",\r\n \"monedaDestino\":\"dolares\",\r\n \"tipoCambio\":4.35\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/tipocambio/modificar/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"tipocambio",
+						"modificar",
 						""
 					]
 				}

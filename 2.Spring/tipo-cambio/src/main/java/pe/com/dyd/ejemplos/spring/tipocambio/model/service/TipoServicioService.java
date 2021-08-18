@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pe.com.dyd.ejemplos.spring.tipocambio.model.dao.ITipoCambioDao;
+import pe.com.dyd.ejemplos.spring.tipocambio.model.entity.ActualizaTipoCambio;
 import pe.com.dyd.ejemplos.spring.tipocambio.model.entity.CalculoTipoCambio;
 import pe.com.dyd.ejemplos.spring.tipocambio.model.entity.ResultadoCalculoTipoCambio;
 import pe.com.dyd.ejemplos.spring.tipocambio.model.entity.TipoCambio;
@@ -28,7 +29,8 @@ public class TipoServicioService implements ITipoCambioService {
 	@Override
 	public ResultadoCalculoTipoCambio calcularTipoCambio(CalculoTipoCambio calculoTipoCambio) {
 		ResultadoCalculoTipoCambio resultado = new ResultadoCalculoTipoCambio();
-		TipoCambioKey key = new TipoCambioKey(calculoTipoCambio.getMonedaOrigen().toUpperCase(), calculoTipoCambio.getMonedaDestino().toUpperCase());
+		TipoCambioKey key = new TipoCambioKey(calculoTipoCambio.getMonedaOrigen().toUpperCase(), 
+				calculoTipoCambio.getMonedaDestino().toUpperCase());
 		
 		Optional<TipoCambio> cambio = tipoCambioDao.findById(key);
 		
@@ -49,6 +51,20 @@ public class TipoServicioService implements ITipoCambioService {
 		}
 		
 		return resultado;
+	}
+
+	@Override
+	public void modificarTipoCambio(ActualizaTipoCambio actualizaTipoCambio) {
+		TipoCambioKey key = new TipoCambioKey(actualizaTipoCambio.getMonedaOrigen().toUpperCase(), 
+				actualizaTipoCambio.getMonedaDestino().toUpperCase());
+		
+		Optional<TipoCambio> cambio = tipoCambioDao.findById(key);
+		
+		if (cambio.isPresent()) {
+			TipoCambio tipoCambio = cambio.get();
+			tipoCambio.setTipoCambio(actualizaTipoCambio.getTipoCambio());
+			tipoCambioDao.save(tipoCambio);
+		}
 	}
 	
 }
