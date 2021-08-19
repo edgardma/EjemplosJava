@@ -1,0 +1,46 @@
+Dado un arreglo con los siguientes números [1, 2, 8, 23, 5, 15, 17, 15] 
+mostrar un arreglo solo con números primos y ordenado: [2, 5, 17, 23]
+
+Inicio
+    Arreglo numero[1, 2, 8, 23, 5, 15, 17, 15]
+    Arreglo primos[]
+    pos = 0
+    posPrimos = 0
+    numPrimero = 0
+    numSegundo = 0
+    Recorrer numero
+       Si (esPrimo(numero[pos]))
+         Si numPrimero == 0)
+            numPrimero = numero[pos]
+         Fin
+         Si (numSegundo == 0)
+            numSegundo = numero[pos]
+         Fin
+         Si (numPrimero > numSegundo)
+             primos[posPrimos] = numPrimero;
+         Sino
+             primos[posPrimos] = numSegundo;
+         Fin
+         
+         posPrimos = posPrimos + 1
+       Fin
+       pos = pos + 1
+    Fin
+Fin
+
+funcion esPrimo(numero)
+    primo = FALSE
+    pos = 2
+    Recorre pos < numero
+       Si (numero % pos) <> 0
+           primo = VERDADERO
+       Sino
+           primo = FALSO
+           salir
+       Fin
+       por = pos + 1;
+    Fin
+    Si (numero = 2)
+      primo = VERDADERO
+    Retorna primo
+Fin Funcion

@@ -33,7 +33,7 @@ public class TipoCambioController {
     }
 	
 	@PostMapping(value="modificar")
-    public void modificarTipoCambio(@RequestBody ActualizaTipoCambio actualizaTipoCambio) {
-        tipoCambioService.modificarTipoCambio(actualizaTipoCambio);
+    public int modificarTipoCambio(@RequestBody List<ActualizaTipoCambio> actualizaTipoCambio) {
+        return tipoCambioService.modificarTipoCambio(actualizaTipoCambio);
     }
 }

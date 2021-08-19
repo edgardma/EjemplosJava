@@ -54,7 +54,17 @@ public class TipoServicioService implements ITipoCambioService {
 	}
 
 	@Override
-	public void modificarTipoCambio(ActualizaTipoCambio actualizaTipoCambio) {
+	public int modificarTipoCambio(List<ActualizaTipoCambio> actualizaTipoCambio) {
+		int i = 0;
+		for(ActualizaTipoCambio item : actualizaTipoCambio) {
+			actualizar(item);
+			i++;
+		}
+		
+		return i;
+	}
+	
+	private void actualizar(ActualizaTipoCambio actualizaTipoCambio) {
 		TipoCambioKey key = new TipoCambioKey(actualizaTipoCambio.getMonedaOrigen().toUpperCase(), 
 				actualizaTipoCambio.getMonedaDestino().toUpperCase());
 		
@@ -64,7 +74,13 @@ public class TipoServicioService implements ITipoCambioService {
 			TipoCambio tipoCambio = cambio.get();
 			tipoCambio.setTipoCambio(actualizaTipoCambio.getTipoCambio());
 			tipoCambioDao.save(tipoCambio);
+		} else {
+			TipoCambio tipoCambioNew = new TipoCambio(actualizaTipoCambio.getMonedaOrigen(), 
+					actualizaTipoCambio.getMonedaDestino(),
+					actualizaTipoCambio.getTipoCambio(),
+					"C");
+			
+			tipoCambioDao.save(tipoCambioNew);
 		}
 	}
-	
 }

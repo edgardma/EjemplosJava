@@ -12,5 +12,5 @@ public interface ITipoCambioService {
 	
 	public ResultadoCalculoTipoCambio calcularTipoCambio(CalculoTipoCambio calculoTipoCambio);
 	
-	public void modificarTipoCambio(ActualizaTipoCambio actualizaTipoCambio);
+	public int modificarTipoCambio(List<ActualizaTipoCambio> actualizaTipoCambio);
 }

@@ -49,6 +49,16 @@ public class TipoCambio implements Serializable {
 	public void setForma(String forma) {
 		this.forma = forma;
 	}
+	public TipoCambio(String monedaOrigen, String monedaDestino, double tipoCambio, String forma) {
+		super();
+		this.monedaOrigen = monedaOrigen;
+		this.monedaDestino = monedaDestino;
+		this.tipoCambio = tipoCambio;
+		this.forma = forma;
+	}
+	public TipoCambio() {
+		super();
+	}
 	
 }
 
