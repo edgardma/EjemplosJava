@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import pe.com.dyd.ejemplos.spring.reactor.app.models.Usuario;
 import reactor.core.publisher.Flux;
 
 @SpringBootApplication
@@ -21,23 +22,23 @@ public class SpringBootReactorApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// Imprimir en la consola
 		// Flux<String> nombres = Flux.just("Andres", "Pedro", "", "Diego", "Juan") // Con error
-		Flux<String> nombres = Flux.just("Andres", "Pedro", "Maria", "Diego", "Juan")
-				.map(nombre -> {
-					return nombre.toUpperCase();
-				})
-				.doOnNext(e -> {
-					if (e.isEmpty()) {
+		Flux<Usuario> nombres = Flux.just("Andres", "Pedro", "Maria", "Diego", "Juan")
+				.map(nombre -> new Usuario(nombre.toUpperCase(), null))
+				.doOnNext(usuario -> {
+					if (usuario == null) {
 						throw new RuntimeException("Nombres no pueden ser vacíos");
 					}
-					System.out.println(e);
+					System.out.println(usuario.getNombres());
 				})
-				.map(nombre -> {
-					return nombre.toLowerCase();
+				.map(usuario -> {
+					String nombre = usuario.getNombres().toLowerCase();
+					usuario.setNombres(nombre);
+					return usuario;
 				});
 		
 		// Imprime en el log
 		nombres.subscribe(
-				e -> log.info(e),
+				e -> log.info(e.getNombres()),
 				error -> log.error(error.getMessage()),
 				new Runnable() {
 					@Override
