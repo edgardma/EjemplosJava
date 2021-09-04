@@ -24,7 +24,32 @@ public class SpringBootReactorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ejemploFlatMap();
+		ejemploToString();
+	}
+	
+	private void ejemploToString() {
+		List<Usuario> usuariosList = new ArrayList<>();
+		usuariosList.add(new Usuario("Andres", "Guzman"));
+		usuariosList.add(new Usuario("Pedro", "Fulano"));
+		usuariosList.add(new Usuario("Maria", "Fulana"));
+		usuariosList.add(new Usuario("Diego", "Sultano"));
+		usuariosList.add(new Usuario("Juan", "Mengano"));
+		usuariosList.add(new Usuario("Bruce", "Lee"));
+		usuariosList.add(new Usuario("Bruce", "Willis"));
+		
+		Flux.fromIterable(usuariosList)
+				.map(usuario -> usuario.getNombres().toUpperCase().concat(" ").concat(usuario.getApellidos().toUpperCase()))
+				.flatMap(nombre -> {
+					if(nombre.contains("BRUCE")) {
+						return Mono.just(nombre);
+					} else {
+						return Mono.empty();
+					}
+				})
+				.map(nombre -> {
+					return nombre.toLowerCase();
+				})
+				.subscribe(e -> log.info(e.toString()));
 	}
 	
 	private void ejemploFlatMap() {
@@ -52,7 +77,7 @@ public class SpringBootReactorApplication implements CommandLineRunner {
 					return usuario;
 				})
 				.subscribe(
-				e -> log.info(e.toString()));
+						e -> log.info(e.toString()));
 	}
 	
 	private void prueba4() {
