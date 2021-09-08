@@ -1,8 +1,11 @@
 package pe.com.dyd.ejemplos.spring.reactor.app;
 
+import java.io.InterruptedIOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 
 import org.slf4j.Logger;
@@ -28,7 +31,54 @@ public class SpringBootReactorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ejemploIntervaloInfinito();
+		ejemploIntervaloDesdeCreate2();
+	}
+	
+	private void ejemploIntervaloDesdeCreate2() {
+		Flux.create(emitter -> {
+			Timer timer = new Timer();
+			timer.schedule(new TimerTask() {
+				private Integer contador = 0;
+				
+				@Override
+				public void run() {
+					emitter.next(++contador);
+					if (contador == 10) {
+						timer.cancel();
+						emitter.complete();
+					}
+					
+					if (contador == 5) {
+						timer.cancel();
+						emitter.error(new InterruptedIOException("Errorm se ha detenido el flux en 5!!"));
+					}
+				}
+			}, 1000, 1000);
+		})
+		.subscribe(next -> log.info(next.toString()),
+				error -> log.error(error.getMessage()),
+				() -> log.info("Hemos terminado"));
+	}
+	
+	private void ejemploIntervaloDesdeCreate1() {
+		Flux.create(emitter -> {
+			Timer timer = new Timer();
+			timer.schedule(new TimerTask() {
+				private Integer contador = 0;
+				
+				@Override
+				public void run() {
+					emitter.next(++contador);
+					if (contador == 10) {
+						timer.cancel();
+						emitter.complete();
+					}
+				}
+			}, 1000, 1000);
+		})
+		.doOnNext(next -> log.info(next.toString()))
+		.doOnComplete(() -> log.info("Hemos terminado"))
+		.subscribe();
 	}
 	
 	private void ejemploIntervaloInfinito() throws InterruptedException {
