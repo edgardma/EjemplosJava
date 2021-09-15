@@ -2,6 +2,7 @@ package pe.com.dyd.ejemplos.spring.webflux.app.models.documents;
 
 import java.util.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -24,6 +25,7 @@ public class Producto {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date creatAt;
 	
+	@Valid
 	private Categoria categoria;
 	
 	public Producto() {

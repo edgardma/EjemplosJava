@@ -1,5 +1,7 @@
 package pe.com.dyd.ejemplos.spring.webflux.app.models.documents;
 
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Categoria {
 
 	@Id
+	@NotEmpty
 	private String id;
 	
 	private String nombre;

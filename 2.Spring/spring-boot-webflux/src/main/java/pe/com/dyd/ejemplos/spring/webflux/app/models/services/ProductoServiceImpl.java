@@ -59,7 +59,7 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public Mono<Categoria> findByIdCAtegoria(String id) {
+	public Mono<Categoria> findByIdCategoria(String id) {
 		return categoriaDao.findById(id);
 	}
 
