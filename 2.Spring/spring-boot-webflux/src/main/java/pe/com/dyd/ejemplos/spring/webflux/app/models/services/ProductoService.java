@@ -1,5 +1,6 @@
 package pe.com.dyd.ejemplos.spring.webflux.app.models.services;
 
+import pe.com.dyd.ejemplos.spring.webflux.app.models.documents.Categoria;
 import pe.com.dyd.ejemplos.spring.webflux.app.models.documents.Producto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -17,5 +18,11 @@ public interface ProductoService {
 	public Mono<Producto> save(Producto producto);
 	
 	public Mono<Void> delete(Producto producto);
+	
+	public Flux<Categoria> findAllCategoria();
+	
+	public Mono<Categoria> findByIdCAtegoria(String id);
+	
+	public Mono<Categoria> saveCategoria(Categoria categoria);
 	
 }
