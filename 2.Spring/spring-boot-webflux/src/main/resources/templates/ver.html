@@ -10,10 +10,17 @@
 <a th:href="@{/listar}">Volver</a>
 
 <div>
-	<li th:text="${producto.nombre}"></li>
-	<li th:text="'Id: ' + ${producto.id}"></li>
-	<li th:text="'Precio: ' + ${#numbers.formatCurrency(producto.precio)}"></li>
-	<li th:text="'Fecha: ' + ${#calendars.format(producto.creatAt, 'dd/MM/yyyy')}"></li>
+	<div>
+		<img th:if="${producto.foto != null && #strings.length(producto.foto)>0}" 
+		     style="max-width: 25%;"
+		     th:src="@{/uploads/img/} + ${producto.foto}" th:alt="${producto.nombre}" />
+	</div>
+	<ul>
+		<li th:text="${producto.nombre}"></li>
+		<li th:text="'Id: ' + ${producto.id}"></li>
+		<li th:text="'Precio: ' + ${#numbers.formatCurrency(producto.precio)}"></li>
+		<li th:text="'Fecha: ' + ${#calendars.format(producto.creatAt, 'dd/MM/yyyy')}"></li>
+	</ul>
 </div>
 
 </body>
