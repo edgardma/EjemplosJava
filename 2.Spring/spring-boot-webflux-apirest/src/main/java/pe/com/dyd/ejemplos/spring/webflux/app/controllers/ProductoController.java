@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +30,14 @@ public class ProductoController {
 				);
 	}
 	
+	@GetMapping("/{id}")
+	public Mono<ResponseEntity<Producto>> ver(@PathVariable String id) {
+		return service.findById(id).map(p -> ResponseEntity.ok()
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
+				.body(p))
+				.defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+	/*
 	@GetMapping
 	public Mono<ResponseEntity<Flux<Producto>>> lista3() {
 		return Mono.just(
@@ -40,4 +49,10 @@ public class ProductoController {
 	public Flux<Producto> lista2() {
 		return service.findAll();
 	}
+	
+	@GetMapping("/{id}")
+	public Mono<ResponseEntity<Producto>> ver2(@PathVariable String id) {
+		return service.findById(id).map(p -> ResponseEntity.ok(p));
+	}
+	*/
 }
