@@ -3,7 +3,11 @@ package pe.com.dyd.ejemplos.spring.webflux.app.controllers;
 import java.io.File;
 import java.net.URI;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.support.WebExchangeBindException;
 
 import pe.com.dyd.ejemplos.spring.webflux.app.models.documents.Producto;
 import pe.com.dyd.ejemplos.spring.webflux.app.models.services.ProductoService;
@@ -89,16 +94,36 @@ public class ProductoController {
 	}
 	
 	@PostMapping
-	public Mono<ResponseEntity<Producto>> crear(@RequestBody Producto producto) {
+	public Mono<ResponseEntity<Map<String, Object>>> crear(@Valid @RequestBody Mono<Producto> monoProducto) {
+		Map<String, Object> respuesta =new HashMap<String, Object>();
 		
-		if(producto.getCreatAt() == null) {
-			producto.setCreatAt(new Date());
-		}
-		
-		return service.save(producto).map(
-				p -> ResponseEntity.created(URI.create("/api/productos/".concat(p.getId())))
+		return monoProducto.flatMap(producto -> {
+			if(producto.getCreatAt() == null) {
+				producto.setCreatAt(new Date());
+			}
+			
+			return service.save(producto).map(p -> {
+				respuesta.put("producto", p);
+				respuesta.put("mensaje", "Producto creado con éxito.");
+				respuesta.put("timestamp", new Date());
+				return ResponseEntity.created(URI.create("/api/productos/".concat(p.getId())))
 									.contentType(MediaType.APPLICATION_JSON_UTF8)
-									.body(p));
+									.body(respuesta);
+			});
+		})
+		.onErrorResume(t -> {
+			return Mono.just(t).cast(WebExchangeBindException.class)
+					.flatMap(e -> Mono.just(e.getFieldErrors()))
+					.flatMapMany(Flux::fromIterable)
+					.map(fieldError -> "El campo " + fieldError.getField() + " " + fieldError.getDefaultMessage())
+					.collectList()
+					.flatMap(list -> {
+						respuesta.put("errors", list);
+						respuesta.put("status", HttpStatus.BAD_REQUEST.value());
+						respuesta.put("timestamp", new Date());
+						return Mono.just(ResponseEntity.badRequest().body(respuesta));
+					});
+		});
 	}
 	
 	@PutMapping("/{id}")
