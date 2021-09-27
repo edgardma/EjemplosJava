@@ -114,7 +114,6 @@ public class SpringBootWebfluxApirestApplicationTests {
 	public void crearTest2() {
 		
 		Categoria categoria = service.findCategoriaByNombre("Muebles").block();
-		
 		Producto producto = new Producto("Mesa comedor", 100.00, categoria);
 		
 		client.post().uri("/api/v2/productos")
@@ -131,6 +130,27 @@ public class SpringBootWebfluxApirestApplicationTests {
 			Assertions.assertThat(p.getNombre()).isEqualTo("Mesa comedor");
 			Assertions.assertThat(p.getCategoria().getNombre()).isEqualTo("Muebles");
 		});
+	}
+	
+	@Test
+    public void editarTest() {
+		
+		Categoria categoria = service.findCategoriaByNombre("Electrónico").block();
+		Producto producto = service.findByNombre("Laptop HP").block();
+		
+		Producto productoEditado = new Producto("ASUS Notebook", 700.00, categoria);
+		
+		client.put().uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.contentType(MediaType.APPLICATION_JSON_UTF8)
+		.accept(MediaType.APPLICATION_JSON_UTF8)
+		.body(Mono.just(productoEditado), Producto.class)
+		.exchange()
+		.expectStatus().isCreated()
+		.expectHeader().contentType(MediaType.APPLICATION_JSON_UTF8)
+		.expectBody()
+		.jsonPath("$.id").isNotEmpty()
+		.jsonPath("$.nombre").isEqualTo("ASUS Notebook")
+		.jsonPath("$.categoria.nombre").isEqualTo("Electrónico");
 	}
 
 }
