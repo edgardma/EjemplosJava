@@ -97,7 +97,8 @@ public class SpringBootWebfluxApirestApplicationTests {
 		
 		Producto producto = new Producto("Mesa comedor", 100.00, categoria);
 		
-		client.post().uri("/api/v2/productos")
+		client.post()
+		.uri("/api/v2/productos")
 		.contentType(MediaType.APPLICATION_JSON_UTF8)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.body(Mono.just(producto), Producto.class)
@@ -116,7 +117,8 @@ public class SpringBootWebfluxApirestApplicationTests {
 		Categoria categoria = service.findCategoriaByNombre("Muebles").block();
 		Producto producto = new Producto("Mesa comedor", 100.00, categoria);
 		
-		client.post().uri("/api/v2/productos")
+		client.post()
+		.uri("/api/v2/productos")
 		.contentType(MediaType.APPLICATION_JSON_UTF8)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.body(Mono.just(producto), Producto.class)
@@ -140,7 +142,8 @@ public class SpringBootWebfluxApirestApplicationTests {
 		
 		Producto productoEditado = new Producto("ASUS Notebook", 700.00, categoria);
 		
-		client.put().uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		client.put()
+		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
 		.contentType(MediaType.APPLICATION_JSON_UTF8)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.body(Mono.just(productoEditado), Producto.class)
@@ -151,6 +154,25 @@ public class SpringBootWebfluxApirestApplicationTests {
 		.jsonPath("$.id").isNotEmpty()
 		.jsonPath("$.nombre").isEqualTo("ASUS Notebook")
 		.jsonPath("$.categoria.nombre").isEqualTo("Electrónico");
+	}
+	
+	@Test
+	public void eliminarTest() {
+		
+		Producto producto = service.findByNombre("Bianchi Bicicleta").block();
+		client.delete()
+		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.exchange()
+		.expectStatus().isNoContent()
+		.expectBody()
+		.isEmpty();
+		
+		client.get()
+		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.exchange()
+		.expectStatus().isNotFound()
+		.expectBody()
+		.isEmpty();
 	}
 
 }
