@@ -6,6 +6,7 @@ import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
@@ -23,11 +24,14 @@ public class SpringBootWebfluxApirestApplicationTests {
 	
 	@Autowired
 	private ProductoService service;
+	
+	@Value("${config.base.endpoint}")
+	private String url;
 
 	@Test
 	public void listarTest1() {
 		client.get()
-		.uri("/api/v2/productos")
+		.uri(url)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.exchange()
 		.expectStatus().isOk()
@@ -39,7 +43,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 	@Test
 	public void listarTest2() {
 		client.get()
-		.uri("/api/v2/productos")
+		.uri(url)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.exchange()
 		.expectStatus().isOk()
@@ -60,7 +64,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 		Producto producto = service.findByNombre("TV Panasonic").block();
 		
 		client.get()
-		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.uri(url + "/{id}", Collections.singletonMap("id", producto.getId()))
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.exchange()
 		.expectStatus().isOk()
@@ -75,7 +79,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 		Producto producto = service.findByNombre("TV Panasonic").block();
 		
 		client.get()
-		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.uri(url + "/{id}", Collections.singletonMap("id", producto.getId()))
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.exchange()
 		.expectStatus().isOk()
@@ -98,7 +102,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 		Producto producto = new Producto("Mesa comedor", 100.00, categoria);
 		
 		client.post()
-		.uri("/api/v2/productos")
+		.uri(url)
 		.contentType(MediaType.APPLICATION_JSON_UTF8)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.body(Mono.just(producto), Producto.class)
@@ -118,7 +122,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 		Producto producto = new Producto("Mesa comedor", 100.00, categoria);
 		
 		client.post()
-		.uri("/api/v2/productos")
+		.uri(url)
 		.contentType(MediaType.APPLICATION_JSON_UTF8)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.body(Mono.just(producto), Producto.class)
@@ -143,7 +147,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 		Producto productoEditado = new Producto("ASUS Notebook", 700.00, categoria);
 		
 		client.put()
-		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.uri(url + "/{id}", Collections.singletonMap("id", producto.getId()))
 		.contentType(MediaType.APPLICATION_JSON_UTF8)
 		.accept(MediaType.APPLICATION_JSON_UTF8)
 		.body(Mono.just(productoEditado), Producto.class)
@@ -161,7 +165,7 @@ public class SpringBootWebfluxApirestApplicationTests {
 		
 		Producto producto = service.findByNombre("Bianchi Bicicleta").block();
 		client.delete()
-		.uri("/api/v2/productos/{id}", Collections.singletonMap("id", producto.getId()))
+		.uri(url + "/{id}", Collections.singletonMap("id", producto.getId()))
 		.exchange()
 		.expectStatus().isNoContent()
 		.expectBody()
