@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "config.kafka.topics.name",
+  "type": "java.lang.String",
+  "description": "A description for 'config.kafka.topics.name'"
+}]}
