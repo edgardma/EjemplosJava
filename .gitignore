@@ -2,3 +2,9 @@
 /cursoArquitecturaJava/LABM1C3-05WSHandler/target/
 
 *.class
+2.Spring/spring-boot-reactor/bin/src/main/resources/application.properties
+2.Spring/spring-boot-reactor/bin/pom.xml
+2.Spring/spring-boot-reactor/bin/mvnw.cmd
+2.Spring/spring-boot-reactor/bin/mvnw
+2.Spring/spring-boot-reactor/bin/.mvn/wrapper/maven-wrapper.properties
+2.Spring/spring-boot-reactor/bin/.mvn/wrapper/maven-wrapper.jar
