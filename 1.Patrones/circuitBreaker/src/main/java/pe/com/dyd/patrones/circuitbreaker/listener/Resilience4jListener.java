@@ -22,7 +22,7 @@ public class Resilience4jListener {
 			@Override
 			public void onEntryAddedEvent(EntryAddedEvent<CircuitBreaker> entryAddedEvent) {
 				entryAddedEvent.getAddedEntry().getEventPublisher()
-	            .onFailureRateExceeded(event -> log.error("circuit breaker {} failure rate {} on {}",
+				.onFailureRateExceeded(event -> log.error("circuit breaker {} failure rate {} on {}",
 	                event.getCircuitBreakerName(), event.getFailureRate(), event.getCreationTime())
 	            )
 	            .onSlowCallRateExceeded(event -> log.error("circuit breaker {} slow call rate {} on {}",
