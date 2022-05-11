@@ -1,0 +1,42 @@
+package edu.cibertec.drools
+
+//Lista de imports
+import edu.cibertec.drools.bean.*
+
+//Importar funciones
+import function edu.cibertec.drools.Funciones.report
+
+//Reglas
+rule "Balance mayor que 100"
+no-loop
+salience 50 // Prioridad, mayor número, mayor prioridad
+dialect "mvel"
+	when 
+		$account: Account(balance > 100)
+		$bonus: Bonus(id == "GOAL")
+	then
+		System.out.println("Id=" + $account.id + ", balance mayor que 100, balance= " + $account.balance);
+		
+		modify($account) {
+			balance = $account.balance + $bonus.amount
+		}
+		
+		report(kcontext, $account, $bonus);
+end
+
+rule "Balance menor que 100"
+no-loop
+salience 50 // Prioridad, mayor número, mayor prioridad
+dialect "mvel"
+	when 
+		$account: Account(balance <= 100)
+		$bonus: Bonus(id == "HELP")
+	then
+		System.out.println("Id=" + $account.id + ", balance menor/igual que 100, balance= " + $account.balance);
+		
+		modify($account) {
+			balance = $account.balance + $bonus.amount
+		}
+		
+		report(kcontext, $account, $bonus);
+end
