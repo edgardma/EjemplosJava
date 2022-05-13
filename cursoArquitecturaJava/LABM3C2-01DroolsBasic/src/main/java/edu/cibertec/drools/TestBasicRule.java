@@ -15,6 +15,7 @@ import edu.cibertec.drools.support.KnowledgeBaseHelper;
 
 public class TestBasicRule {
 	private static final Logger LOG = LoggerFactory.getLogger(TestBasicRule.class);
+	private static final String nombreArchivoReglas = "basicRule.drl";	
 	
 	public static void main(String[] args) {
 		prueba1();
@@ -22,11 +23,11 @@ public class TestBasicRule {
 	}
 	
 	public static void prueba1() {
-		KnowledgeBase knowledgeBase = KnowledgeBaseHelper.createKnowledgeBase("basicRule.drl");
-		
+		KnowledgeBase knowledgeBase = KnowledgeBaseHelper.createKnowledgeBase(nombreArchivoReglas);
 		StatefulKnowledgeSession session = knowledgeBase.newStatefulKnowledgeSession();
 		
 		try {
+			LOG.info("======================================================");
 			LOG.info("Reglas en una ruta dentro del ambito del aplicativo...");
 			LOG.info("======================================================");
 			LOG.info("...ejecutando reglas.");
@@ -63,13 +64,22 @@ public class TestBasicRule {
 	}
 
 	public static void prueba2() {
+		String rutaArchivoReglas = "";
+		
+		if (Funciones.isWindows()) {
+			rutaArchivoReglas = "D:\\" + nombreArchivoReglas;
+		} else {
+			rutaArchivoReglas = "/home/emarquez/" + nombreArchivoReglas;
+		}
+			
 		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-		kbuilder.add(ResourceFactory.newFileResource("D:\\basicRule.drl"), ResourceType.DRL);
+		kbuilder.add(ResourceFactory.newFileResource(rutaArchivoReglas), ResourceType.DRL);
 		KnowledgeBase knowledgeBase = kbuilder.newKnowledgeBase();
 		
 		StatefulKnowledgeSession session = knowledgeBase.newStatefulKnowledgeSession();
 		
 		try {
+			LOG.info("======================================================");
 			LOG.info("Reglas en una ruta fuera del ambito del aplicativo...");
 			LOG.info("======================================================");
 			LOG.info("...ejecutando reglas.");

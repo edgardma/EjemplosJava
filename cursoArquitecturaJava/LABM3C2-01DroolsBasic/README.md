@@ -24,12 +24,10 @@ Para poder adicionar el plugin de Drools en Eclipse seguir los siguientes pasos:
 
 *Fuente: [Drools 7.46.0.Final Update Site - Nightly Build Update Site: 7.46.0.Final](https://download.jboss.org/drools/release/7.46.0.Final/org.drools.updatesite/)*
 
-## 
+
 
 ## Para ejecutar el ejemplo
 
-Para poder ejecutar sin errores el proyecto, copiar el archivo `basicRule.drl` a la unidad `D:` o en su defecto, modificar el archivo `TestBasicRule.java` en la línea donde se indica la ubicación física del archivo, el cual estará al inicio del método `prueba2`.
+Para poder ejecutar sin errores el proyecto, copiar el archivo `basicRule.drl` a la unidad `D:` si es `Windows` o en su defecto, modificar el archivo `TestBasicRule.java` en la línea donde se indica la ubicación física del archivo tanto para `Windows` como para `Linux`, el cual estará al inicio del método `prueba2`.
 
 Para ejecutar el ejemplo, abrir el archivo `TestBasicRule.java` en donde se encuentra el código principal.
-
-
