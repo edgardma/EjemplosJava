@@ -35,7 +35,4 @@ Vagrantfile
 gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache
-
-### Ignore log file
-*.log
 *.log.*
