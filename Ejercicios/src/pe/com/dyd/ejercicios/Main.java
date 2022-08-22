@@ -9,7 +9,8 @@ public class Main {
 		//System.out.println(Challenge1.isAnagram("Roma", "amor"));
 		//System.out.println(Challenge1.isAnagram("Roma", "amor2"));
 		
-		Challenge2.fibonacci();
+		//Challenge2.fibonacci();
+		Challenge3.printFirst100PrimeNumbers();
 	}
 
 }
