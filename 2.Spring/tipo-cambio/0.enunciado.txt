@@ -1,0 +1,21 @@
+Consideraciones técnicas:
+* El lenguaje de programación a utilizar es Java con el framework Spring Boot. (OK)
+* Utilizar programación reactiva RxJava
+
+Funcionalidades Requeridas:
+* Se debe crear una API para aplicar un tipo de cambio a un monto. (OK)
+* La API debe recibir el valor “monto“, “moneda origen”, “moneda destino“ y 
+  devolver el “monto”, “monto con tipo de cambio”, “moneda origen”, “moneda destino“  y “tipo de cambio”. (OK)
+* Se debe crear la información del tipo de cambio en una in memory database, por ejemplo H2. (OK)
+* Dockerizar el JAR e invocar a la API desde el contenedor. (Windows o CentOS) (OK)
+* El uso de la API debe ser mostrada desde Postman. (OK)
+
+Funcionalidades Opcionales:
+* Implementar un nivel de seguridad en la consulta (JWT).
+* Crear un POST para actualizar el valor del tipo de cambio. (OK)
+* Implementar un front con angular que consuma la API.
+
+Consideraciones:
+La elección de la Imagen – al dockerizar – es libre.
+No hay un standard en los nombres de los objetos creados.
+En caso de alguna duda en el enunciado, tomar una decisión y luego sustentarla durante la entrevista
