@@ -12,9 +12,12 @@ public class Main {
 		//Challenge2.fibonacci();
 		//Challenge3.printFirst100PrimeNumbers();
 		
-		Challenge4.area(new Triangle(10.0, 5.0));
-		Challenge4.area(new Rectangle(5.0, 7.0));
-		Challenge4.area(new Square(4.0));
+		//Challenge4.area(new Triangle(10.0, 5.0));
+		//Challenge4.area(new Rectangle(5.0, 7.0));
+		//Challenge4.area(new Square(4.0));
+		
+		System.out.println(Challenge6.reverse("Hola mundo"));
+		System.out.println(Challenge6.recursiveReverse("Hola mundo"));
 	}
 
 }
